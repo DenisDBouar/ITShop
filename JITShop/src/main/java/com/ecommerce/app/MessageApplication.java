@@ -11,11 +11,13 @@ public class MessageApplication extends Application {
 	private Set<Object> singletons = new HashSet<Object>();
 
 	public MessageApplication() {
+		System.out.println("<< MessageApplication >>");
 		singletons.add(new MessageRestService());
 	}
 
 	@Override
 	public Set<Object> getSingletons() {
+		System.out.println("<<getSingletons>>");
 		return singletons;
 	}
 }
