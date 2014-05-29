@@ -48,7 +48,7 @@ public class MessageRestService {
 		
 		ResultSet res = null;
 		try {
-			res = MysqlIO.getConnectionStatement().executeQuery(sqlRequest);
+			res = MysqlIO.getConnection().createStatement().executeQuery(sqlRequest);
 			while (res.next()) {
 				retStr += res.getString(2);
 			}
