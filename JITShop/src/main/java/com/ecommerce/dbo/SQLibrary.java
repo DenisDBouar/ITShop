@@ -15,10 +15,13 @@ public class SQLibrary extends MysqlIO {
 		JSONArray json = new JSONArray();
 
 		try {
-			String request ="select GroupID, GroupName " +
+			/*String request ="select GroupID, GroupName " +
 					"from JITShopDB.Groups " +
 					"where UPPER(GroupID) = ? ";//SQL injection
-			
+*/			
+			String request ="SELECT CategoryID, CategoryName, Description, GroupID"+
+							" FROM JITShopDB.Categories"+
+							" WHERE UPPER(GroupID) = ?;";
 			
 			query = MysqlIO.getConnection().prepareStatement(request);
 			//query.setString(1, brand.toUpperCase()); //protect against sql injection
@@ -46,7 +49,7 @@ public class SQLibrary extends MysqlIO {
 
 	
 	public JSONArray queryReturnJArray() {
-		String sqlRequest ="SELECT * FROM JITShopDB.Groups";
+		String sqlRequest ="SELECT * FROM JITShopDB.Categories";
 		ResultSet res = null;
 		JSONArray json = null;
 		try {
@@ -65,4 +68,48 @@ public class SQLibrary extends MysqlIO {
 		
 		return json;
 	}
+	
+	/**
+	 * This method will insert a record into the Categories table. 
+	 * 
+	 * @param CategoryName
+	 * @param Description
+	 * @param GroupID - integer column
+	 * @return integer 200 for success, 500 for error
+	 * @throws Exception
+	 */
+	public int insertIntoCategories(String CategoryName, 
+									String Description, 
+									String GroupID )throws Exception {
+
+		PreparedStatement query = null;
+		Connection conn = null;
+
+		try {
+			/*
+			 * If this was a real application, you should do data validation here
+			 * before starting to insert data into the database.
+			 */
+			String request ="INSERT INTO Categories(CategoryName, Description, GroupID)"+
+							" VALUES(?, ?, ?);";
+			conn = MysqlIO.getConnection();
+			query = conn.prepareStatement(request);
+
+			query.setString(1, CategoryName);
+			query.setString(2, Description);
+			query.setInt(3, Integer.parseInt(GroupID));
+
+			query.executeUpdate();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+			return 500; 
+		}
+		finally {
+			MysqlIO.CloseConnection();
+		}
+
+		return 200;
+	}
+	
 }
