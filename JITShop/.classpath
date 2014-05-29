@@ -28,6 +28,6 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="/home/boa/Disc/D/Herguan/lectures/semester3/CS540/mysql-connector-java-5.1.30/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry kind="lib" path="/home/boa/Disc/D/Herguan/lectures/semester3/CS540/jettison-1.3.jar"/>
-	<classpathentry kind="lib" path="/home/boa/Disc/D/Herguan/lectures/semester3/CS540/esapi-2.0.1-dist/esapi-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/boa/Disc/D/Herguan/lectures/semester3/CS540/ESAPI-1.4.4/ESAPI-1.4.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
