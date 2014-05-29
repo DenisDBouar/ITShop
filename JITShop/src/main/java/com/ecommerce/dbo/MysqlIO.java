@@ -26,8 +26,10 @@ public class MysqlIO {
 
 	public static void CloseConnection() {
 		try {
-			if (con != null){
+			if (st != null){
 				st.close();
+			}
+			if (con != null){
 				con.close();
 			}
 		} catch (SQLException e) {
