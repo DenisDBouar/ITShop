@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<script src="Scripts/jquery-min.js"></script>
+	<script src="Scripts/mainpage.js"></script>
+	
+	
+	<!-- <script src="Scripts/modernizr-2.6.2.js"></script> -->
+	<script type="text/javascript" src="Scripts/productlist.js" ></script>
+	
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="CSS/bootstrap.css" rel="stylesheet"/>
+	<link href="CSS/Site.css" rel="stylesheet"/>
+	<link href="CSS/Menu.css" rel="stylesheet" />
+	<link href="CSS/Master.css" rel="stylesheet" />
+
+	    <style type="text/css">
+	        .layout-left {
+	            height: 389px;
+	            width: 236px;
+	        }
+	        .auto-style1 {
+	            height: 64px;
+	        }
+	    </style>
+	<title>
+		Welcome
+	</title>
+
+</head>
+<body>
+
+	<div class="anavbar navbar-inverse navbar-fixed-top">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+	                    <a href="./main.jsp" class="navbar-brand">ITShop</a>
+	                </div>
+	                <div class="navbar-collapse collapse">
+	                    <ul class="nav navbar-nav">
+	                        <li></li>
+	                        <!-- <li><a href="About">About</a></li> -->
+	                        <li><a id="a_about" href="#">About</a></li>
+	                        <li><a id="a_Contact" href="#">Contact</a></li>                           
+	                    </ul>
+	                    
+	                            <ul class="nav navbar-nav navbar-right">
+	                                <li><a href="Account/Register">Register</a></li>
+	                                <li><a href="Account/Login">Log in</a></li>
+	                            </ul>
+	                        
+	                </div>
+	            </div>
+	        </div>
+	         <div id="TitleContent" style="text-align: left">
+	            <a href="./">
+	                <img id="Image1" src="Images/logo.jpg" style="border-style:None;" />
+	            </a>  
+	            <br />  
+	        </div>
+	        
+	        <div class="layout">
+			    <div class="layout-spanright">
+				    <div class="toolbar rc">
+					    <div class="search-panel">
+						    <a href="tel:4151234567" class="main-phone">1&nbsp;(415)&nbsp;123-45-67,</a>
+						    <a href="tel:4087654321" class="main-phone">1&nbsp;(408)&nbsp;765-43-21</a>
+						    <span onclick="return(FeedbackForm())" class="head-feedback">Feedback</span>				    
+						    <input name="ctl00$ss" id="ss" type="search" onkeyup="PreSearch(this.value)" autocomplete="off" placeholder="Search" name="s" class="search-field rc" />                   
+		                    <input type="submit" name="ctl00$Search" value="Search" id="Search" class="search-button rc" />
+						   
+						    <div style="display:none" class="presearch rc" id="presearch"></div>
+					    </div>	
+					    <div class="user-panel">
+						    <div class="guest-links">										
+		                        <a href="ShoppingCart" id="cartCount" class="main-phone">Wish List (0)</a>                          
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		    
+		    <!-- menu -->
+		    <div id='cssmenu'>
+		        <ul id="cssmenu_content">
+		            
+		                
+		        </ul>
+		    </div>
+	<!-- /menu -->
+		<!-- page2 -->
+		<div id="page2">
+          <h1>Welcome.</h1>
+          <h2>IT Shop can help you find the perfect electronic device.</h2>
+          <p class="lead"> For your home electronics, from computers & laptops parts to cameras,
+             televisions & home appliances. Each Item listing has detailed 
+                information to help you choose the right device.</p>
+        </div>
+        <!-- /page2 -->
+        
+        <!-- fuut -->
+        <div class="foot_row">
+		    <div class="foot_row-spanright" style="width: 1189px;">
+			    <p class="foot_adds">&copy;  2014 - ITShop</p>
+			    <p class="foot_adds">All rights reserved.Fry's Electronics, ITShop.com and Outpost.com</p>
+			    <p class="foot_adds">are registered trademarks of ITShop's Electronics, Incorporated.</p>
+			    <p class="foot_adds">ITShop.com prices good for online purchases only.</p>
+                <p class="foot_adds">In-store items and prices at Fry's retail locations may vary. Some online offers are subject to prior sale and may not be available.</p>
+		    </div>
+	    </div>
+	    <!-- /fuut -->
+</form>
+</body>
+</html>

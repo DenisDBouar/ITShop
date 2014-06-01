@@ -79,11 +79,11 @@ public JSONArray toJSONArray(ResultSet rs) throws Exception {
                      }
                      else if(rsmd.getColumnType(i)==java.sql.Types.INTEGER){
                      obj.put(column_name, rs.getInt(column_name));
-                     /*Debug*/ System.out.println("ToJson: INTEGER");
+                     // System.out.println("ToJson: INTEGER");
                      }
                      else if(rsmd.getColumnType(i)==java.sql.Types.NVARCHAR){
                      obj.put(column_name, rs.getNString(column_name));
-                     /*Debug*/ System.out.println("ToJson: NVARCHAR");
+                     // System.out.println("ToJson: NVARCHAR");
                      }
                      else if(rsmd.getColumnType(i)==java.sql.Types.VARCHAR){
                     
@@ -117,7 +117,7 @@ public JSONArray toJSONArray(ResultSet rs) throws Exception {
                       }
                      else {
                      obj.put(column_name, rs.getObject(column_name));
-                     /*Debug*/ System.out.println("ToJson: Object "+column_name);
+                     /*Debug*/ //System.out.println("ToJson: Object "+column_name);
                      }
 
                     }//end foreach

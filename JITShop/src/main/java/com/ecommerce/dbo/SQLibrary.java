@@ -46,28 +46,6 @@ public class SQLibrary extends MysqlIO {
 		return json;
 	}
 
-
-	
-	public JSONArray queryReturnJArray() {
-		String sqlRequest ="SELECT * FROM JITShopDB.Categories";
-		ResultSet res = null;
-		JSONArray json = null;
-		try {
-			res = MysqlIO.getConnection().createStatement().executeQuery(sqlRequest);
-			ToJSON converter = new ToJSON();
-			json = new JSONArray();
-			json = converter.toJSONArray(res);
-			
-			MysqlIO.CloseConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally{
-			MysqlIO.CloseConnection();
-		}
-		
-		return json;
-	}
 	
 	/**
 	 * This method will insert a record into the Categories table. 
@@ -112,4 +90,60 @@ public class SQLibrary extends MysqlIO {
 		return 200;
 	}
 	
+	
+	
+	
+	
+	
+	
+	public JSONArray queryReturnProductList(String id) {
+		PreparedStatement query = null;
+		ToJSON converter = new ToJSON();
+		JSONArray json = new JSONArray();
+
+		String sqlRequest ="SELECT ProductID, ProductName, Description, ImagePath, "+
+															"UnitPrice, CategoryID "+
+						   	"FROM Products"+
+							" WHERE CategoryID = ?;";
+		try {
+			query = MysqlIO.getConnection().prepareStatement(sqlRequest);
+			query.setInt(1, Integer.parseInt(id));
+			ResultSet rs = query.executeQuery();
+
+			json = converter.toJSONArray(rs);
+			query.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			MysqlIO.CloseConnection();
+		}
+		
+		return json;
+	}
+
+	public JSONArray queryMenuCreator(String sqlRequestType, String id) {
+		ToJSON converter = new ToJSON();
+		JSONArray json = new JSONArray();
+		String sqlRequest="";
+		if(sqlRequestType.equals("groups"))
+			sqlRequest ="SELECT GroupID, GroupName FROM Groups;";
+		if(sqlRequestType.equals("category"))
+			sqlRequest ="SELECT CategoryID, CategoryName FROM Categories WHERE GroupID = '"+ id +"';";
+		
+		ResultSet res = null;
+		try {
+			res = MysqlIO.getConnection().createStatement().executeQuery(sqlRequest);
+			json = converter.toJSONArray(res);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			MysqlIO.CloseConnection();
+		}
+		
+		return json;
+	}
+
 }
