@@ -40,7 +40,7 @@ public class Menu {
 			/*	e.printStackTrace();
 				return Response.status(500).entity("Server was not able to process your request").build();*/
 			}
-			/*Debug*/System.out.println(">> DEBUG: menue>>" + returnString);
+			/*Debug*///System.out.println(">> DEBUG: menue>>" + returnString);
 			//return Response.ok(returnString).build();
 			return returnString;
 		}
@@ -52,7 +52,7 @@ public class Menu {
 				SQLibrary dao = new SQLibrary();
 				json = dao.queryMenuCreator("category", id);
 				returnString = json.toString();
-				/*Debug*/System.out.println(">> DEBUG: menue category>>" + returnString);
+				/*Debug*///System.out.println(">> DEBUG: menue category>>" + returnString);
 			}
 			catch (Exception e) {
 				e.printStackTrace();

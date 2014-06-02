@@ -118,7 +118,6 @@ public class SQLibrary extends MysqlIO {
 		finally{
 			MysqlIO.CloseConnection();
 		}
-		
 		return json;
 	}
 
@@ -128,8 +127,20 @@ public class SQLibrary extends MysqlIO {
 		String sqlRequest="";
 		if(sqlRequestType.equals("groups"))
 			sqlRequest ="SELECT GroupID, GroupName FROM Groups;";
+		
 		if(sqlRequestType.equals("category"))
 			sqlRequest ="SELECT CategoryID, CategoryName FROM Categories WHERE GroupID = '"+ id +"';";
+		
+		if(sqlRequestType.equals("search"))
+			sqlRequest ="SELECT ProductID, ProductName, Description, ImagePath, UnitPrice, CategoryID "+
+						" FROM Products"+
+						" WHERE LCASE(ProductName) LIKE LCASE('%"+id+"%')"+
+						" OR LCASE(Description) LIKE LCASE('%"+id+"%');";
+		
+		if(sqlRequestType.equals("description"))
+			sqlRequest ="SELECT ProductID, ProductName, Description, ImagePath, UnitPrice, CategoryID "+
+						" FROM Products"+
+						" WHERE ProductID = '"+ id +"';";
 		
 		ResultSet res = null;
 		try {

@@ -34,7 +34,7 @@ $(document).ready(function(){
   
   /*Return Product List page by search*/
   $("#Search").click(function(){
-	
+	  loadproductslist("productlistserch?val=" + $("#ss").val());
   });
 
 });
@@ -78,7 +78,7 @@ function loadmenu(){
 			    	res = res + '<a href="http://localhost:24019/ProductList?id=%202#"><span>'+ servers[i].GroupName +'</span></a><ul>';
 				    	var categoryrez = JSON.parse(servers[i].Category);
 				    	for(var j = 0; j<categoryrez.length; j++){
-				    		res = res + '<li><a href="#" onclick="loadproductslist('+ categoryrez[j].CategoryID +')"><span>'+ categoryrez[j].CategoryName +'</span></a></li>';
+				    		res = res + '<li><a href="#" onclick="loadproductslist(\'productlist?id='+ categoryrez[j].CategoryID +'\')"><span>'+ categoryrez[j].CategoryName +'</span></a></li>';
 				    	}
 			    	res = res + '</ul></li">';
 			    }
@@ -93,7 +93,7 @@ function loadmenu(){
 function loadproductslist(prodid){
 	  $.ajax({
 		  type: 'GET',
-		  url: rootURL + "productlist?id=" + prodid,
+		  url: rootURL + prodid,
 		  success:function(data, textStatus, jqXHR){
 			 
 			var res = "";
@@ -107,15 +107,14 @@ function loadproductslist(prodid){
 				    		tagtr =0;
 				    	}
 			    	tagtr = tagtr +1;
-			    	
-			    	addchart = rootURL + "AddToCart.aspx?productID=" +servers[i].ProductID;
+			    	addchart = rootURL + 'href="#" onclick="productdetails(\''+ servers[i].ProductID +'\')"';
 			    	image = 'ImagesCatalogIMG/' + GetThumbsPath(servers[i].CategoryID) +'/Thumbs/'+ servers[i].ImagePath;
 			    	res = res + '<td class="wrap_cell">'+
 			    	'<div style="margin-right: 8px; margin-bottom: 15px; margin-left: 8px; background-color: white;" onmouseover="mOver(this)" onmouseout="mOut(this)">' +
-				    '<table><tbody><tr><td><a href="'+addchart+'"><img src="'+image+'" height="94" width="125"></a> </td></tr>'+
-				        '<tr><td id="price_center"><a href="'+addchart+'">'+ servers[i].ProductName +'</a>'+
+				    '<table><tbody><tr><td><a '+addchart+'><img src="'+image+'" height="94" width="125"></a> </td></tr>'+
+				        '<tr><td id="price_center"><a '+addchart+'>'+ servers[i].ProductName +'</a>'+
 				                  '<p class="price-ship">Free Shipping</p><br><b>Price: '+
-				                  '</b>'+ servers[i].UnitPrice +' $<br><a href="'+addchart+'">'+
+				                  '</b>'+ servers[i].UnitPrice +' $<br><a href="http://localhost:24019/AddToCart.aspx?productID=32">'+
 				                  '<b>Add To Cart<b></b></b><b><b></b></b></a><b><b></b></b></td></tr>'+
 				       '<tr><td>&nbsp;</td></tr></tbody></table></div>'+
 				      '<p class="wrap_graphics"></p>'

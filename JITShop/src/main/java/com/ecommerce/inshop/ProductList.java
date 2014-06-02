@@ -49,8 +49,44 @@ public class ProductList {
 		return returnString;
 	}
 	
-	
-	
+	@GET
+	@Path("/productlistserch")
+	@Produces(MediaType.TEXT_HTML)
+	public String returnProductListSearch(@QueryParam("val") String val) throws Exception {
+		String returnString = null;
+		JSONArray json = new JSONArray();
+
+		try {
+			SQLibrary dao = new SQLibrary();
+
+			json = dao.queryMenuCreator("search", val);
+			returnString = json.toString();
+			
+		}
+		catch (Exception e) {
+		}
+		return returnString;
+	}
+
+	@GET
+	@Path("/productdetails")
+	@Produces(MediaType.TEXT_HTML)
+	public String productdetails(@QueryParam("id") String id) throws Exception {
+		String returnString = null;
+		JSONArray json = new JSONArray();
+
+		try {
+			SQLibrary dao = new SQLibrary();
+
+			json = dao.queryMenuCreator("description", id);
+			returnString = json.toString();
+			
+		}
+		catch (Exception e) {
+		}
+		return returnString;
+	}
+
 	
 
 }
