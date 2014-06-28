@@ -3,7 +3,9 @@ var rootURL = "http://localhost:8080/JITShop/rest/";
 $(document).ready(function(){
 	
   loadmenu();
-	
+  checkCookie();
+  
+ 
   /*Return About page*/
   $("#a_about").click(function(){
 	  $.ajax({
@@ -13,7 +15,7 @@ $(document).ready(function(){
 		    $("#page2").html(data);
 		  },
 	  	 error: function(jqXHR, textStatus, errorThrown){
-			alert('4to-to error: ' + textStatus);
+			alert('About page error: ' + textStatus);
 		}  
 		});
   });
@@ -27,10 +29,40 @@ $(document).ready(function(){
 		    $("#page2").html(data);
 		  },
 	  	 error: function(jqXHR, textStatus, errorThrown){
-			alert('4to-to error: ' + textStatus);
+			alert('Contact page error: ' + textStatus);
 		}  
 		});
   });
+  
+  /*Return Log In page*/
+  $("#a_login").click(function(){
+	  if($("#a_login").text() == "Log in"){
+		  $.ajax({
+			  type: 'GET',
+			  url: rootURL + "login",
+			  success:function(data, textStatus, jqXHR){
+			    $("#page2").html(data);
+			  },
+		  	 error: function(jqXHR, textStatus, errorThrown){
+				alert('Login page error: ' + textStatus);
+			}  
+			});  
+	  }
+	  else{
+		  logoutajax();
+	  }
+	  
+  });
+  
+  
+  /*Return Register page*/
+  $("#a_register").click(function(){
+	  loadPageRegister();
+  });
+  $("#log_register").click(function(){
+	  loadPageRegister();
+  });
+  
   
   /*Return Product List page by search*/
   $("#Search").click(function(){
@@ -85,7 +117,7 @@ function loadmenu(){
 		    $('#cssmenu_content').html(res);
 		  },
 	  	 error: function(jqXHR, textStatus, errorThrown){
-			alert('4to-to error: ' + textStatus);
+			alert('Load menu error: ' + textStatus);
 		}  
 		});
 }
@@ -114,7 +146,7 @@ function loadproductslist(prodid){
 				    '<table><tbody><tr><td><a '+addchart+'><img src="'+image+'" height="94" width="125"></a> </td></tr>'+
 				        '<tr><td id="price_center"><a '+addchart+'>'+ servers[i].ProductName +'</a>'+
 				                  '<p class="price-ship">Free Shipping</p><br><b>Price: '+
-				                  '</b>'+ servers[i].UnitPrice +' $<br><a href="http://localhost:24019/AddToCart.aspx?productID=32">'+
+				                  '</b>'+ servers[i].UnitPrice +' $<br><a onclick="addToChart(\''+ servers[i].ProductID +'\')" href="javascript:void(0);">'+
 				                  '<b>Add To Cart<b></b></b><b><b></b></b></a><b><b></b></b></td></tr>'+
 				       '<tr><td>&nbsp;</td></tr></tbody></table></div>'+
 				      '<p class="wrap_graphics"></p>'
@@ -124,7 +156,40 @@ function loadproductslist(prodid){
 		    $('#page2').html(res);
 		  },
 	  	 error: function(jqXHR, textStatus, errorThrown){
-			alert('4to-to error: ' + textStatus);
+			alert('Load Product List error: ' + textStatus);
 		}  
+		});
+}
+
+function loadPageRegister(){
+	 if($("#a_register").text() == "Register"){
+		  $.ajax({
+			  type: 'GET',
+			  url: rootURL + "register",
+			  success:function(data, textStatus, jqXHR){
+			    $("#page2").html(data);
+			  },
+		  	 error: function(jqXHR, textStatus, errorThrown){
+				alert('Register page error: ' + textStatus);
+			}  
+			});  
+	  }
+	  else{
+		  alert("gerister else");
+	  }
+}
+
+function logoutajax(){
+	 $.ajax({
+			type: 'DELETE',
+			url: rootURL + "logout" + '/' + getCookie("username"),
+			success: function(data, textStatus, jqXHR){
+				deletecookie();
+				checkCookie();
+				location.reload();
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert('deleteWine error');
+			}
 		});
 }

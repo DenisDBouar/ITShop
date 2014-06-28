@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="Scripts/product.js"></script>
+	<script src="Scripts/loginregister.js"></script>
+	<script src="Scripts/Cart.js"></script>
+</head>
+<body>
+
+	<div id="MainContent_ShoppingCartTitle" class="ContentHead">
+		<h1>Shopping Cart</h1>
+	</div>
+	<div>
+		<table cellspacing="0" cellpadding="4" border="1" rules="cols"
+			style="border-collapse: collapse;" id="MainContent_CartList"
+			class="table table-striped table-bordered">
+			<tbody>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Price (each)</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Item Total</th>
+					<th scope="col">Remove Item</th>
+				</tr>
+			</tbody>
+				
+				
+			<tbody id="cart_table">
+			</tbody>
+			<tbody>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<p></p>
+		<strong><span id="MainContent_LabelTotalText">Order
+				Total: </span> <span id="MainContent_lblTotal">1&nbsp;499,99р.</span> </strong>
+	</div>
+	<br>
+		<table>
+			<tbody>
+				<tr>
+					<td><input type="submit" value="Update"
+						id="MainContent_UpdateBtn" name="ctl00$MainContent$UpdateBtn"></td>
+					<td><input type="image"
+						src="Images/btn_xpressCheckout.gif"
+						alt="Check out with PayPal"
+						style="border-width: 0px; width: 145px; background-color: transparent;"
+						id="MainContent_CheckoutImageBtn"
+						name="ctl00$MainContent$CheckoutImageBtn"></td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

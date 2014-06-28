@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<script src="Scripts/mainpage.js"></script>
+	<script src="Scripts/product.js"></script>
+	<script src="Scripts/loginregister.js"></script>
+</head>
+<body>
+		<h2>Register.</h2>
+		<p class="text-danger"></p>
+		<div class="form-horizontal">
+			<h4>Create a new account.</h4>
+			<hr>
+
+				<div data-valsummary="true" style="display: none;"
+					id="MainContent_ctl00" class="text-danger"></div>
+				<div class="form-group">
+					<label for="MainContent_UserName" class="col-md-2 control-label">User
+						name</label>
+					<div class="col-md-10">
+						<input type="text" id="MainContent_UserName" class="form-control"
+							name="ctl00$MainContent$UserName"><span
+							data-val-controltovalidate="MainContent_UserName"
+							data-val-errormessage="The user name field is required."
+							data-val="true"
+							data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+							data-val-initialvalue="" style="visibility: hidden;"
+							id="MainContent_ctl02" class="text-danger">The user name
+								field is required.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="MainContent_Password" class="col-md-2 control-label">Password</label>
+
+					<div class="col-md-10">
+						<input type="password" id="MainContent_Password"
+							class="form-control" name="ctl00$MainContent$Password"><span
+							data-val-controltovalidate="MainContent_Password"
+							data-val-errormessage="The password field is required."
+							data-val="true"
+							data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+							data-val-initialvalue="" style="visibility: hidden;"
+							id="MainContent_ctl04" class="text-danger">The password
+								field is required.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="MainContent_ConfirmPassword"
+						class="col-md-2 control-label">Confirm password</label>
+					<div class="col-md-10">
+						<input type="password" id="MainContent_ConfirmPassword"
+							class="form-control" name="ctl00$MainContent$ConfirmPassword"><span
+							data-val-display="Dynamic"
+							data-val-controltovalidate="MainContent_ConfirmPassword"
+							data-val-errormessage="The confirm password field is required."
+							data-val="true"
+							data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+							data-val-initialvalue="" style="display: none;"
+							id="MainContent_ctl06" class="text-danger">The confirm
+								password field is required.</span> <span
+							data-val-controltocompare="MainContent_Password"
+							data-val-controlhookup="MainContent_Password"
+							data-val-display="Dynamic"
+							data-val-controltovalidate="MainContent_ConfirmPassword"
+							data-val-errormessage="The password and confirmation password do not match."
+							data-val="true"
+							data-val-evaluationfunction="CompareValidatorEvaluateIsValid"
+							style="display: none;" id="MainContent_ctl07" class="text-danger">The
+								password and confirmation password do not match.</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<input type="submit" id="but_register" value="Register" class="btn btn-default" name="ctl00$MainContent$ctl08">
+					</div>
+				</div>
+		</div>
+
+</body>
+</html>

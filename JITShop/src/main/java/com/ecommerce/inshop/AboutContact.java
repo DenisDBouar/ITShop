@@ -43,6 +43,23 @@ public class AboutContact {
 		
 		return entireFileText;
 	}
+	
+	@GET
+	@Path("/admin")
+	@Produces(MediaType.TEXT_HTML)
+	public String returnAdmin(){
+		
+		String entireFileText ="null";
+		try {
+			 String urls = "/home/boa/Disc/D/Herguan/lectures/semester3/CS540/GIT/LocalEComerce/ITShop/JITShop/src/main/webapp/pages/AdminPage.htm";
+		        
+			entireFileText = new Scanner(new File(urls)).useDelimiter("\\A").next();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+		return entireFileText;
+	}
 
 }
 

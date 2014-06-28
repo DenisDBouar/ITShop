@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+	<script src="Scripts/mainpage.js"></script>
+	<script src="Scripts/product.js"></script>
+	<script src="Scripts/loginregister.js"></script>
+</head>
+<body>
+	<h2>Log in.</h2>
+	<div class="row">
+		<div class="col-md-8">
+			<section id="loginForm">
+			<div class="form-horizontal">
+				<h4>Use a local account to log in.</h4>
+				<hr>
+
+					<div class="form-group">
+						<label for="MainContent_UserName" class="col-md-2 control-label">User
+							name</label>
+						<div class="col-md-10">
+							<input type="text" id="MainContent_UserName" class="form-control"
+								name="ctl00$MainContent$UserName"><span
+								data-val-controltovalidate="MainContent_UserName"
+								data-val-errormessage="The user name field is required."
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="visibility: hidden;"
+								id="MainContent_ctl01" class="text-danger">The user name
+									field is required.</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="MainContent_Password" class="col-md-2 control-label">Password</label>
+
+						<div class="col-md-10">
+							<input type="password" id="MainContent_Password"
+								class="form-control" name="ctl00$MainContent$Password"><span
+								data-val-controltovalidate="MainContent_Password"
+								data-val-errormessage="The password field is required."
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="visibility: hidden;"
+								id="MainContent_ctl03" class="text-danger">The password
+									field is required.</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<div class="checkbox">
+								<input type="checkbox" id="MainContent_RememberMe"
+									name="ctl00$MainContent$RememberMe"> <label
+									for="MainContent_RememberMe">Remember me?</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<input type="submit" name="ctl00$Search" value="Log in" id="sublit_pass" class="search-button rc" />
+						</div>
+					</div>
+			</div>
+			<p>
+				<a href="#" id="log_register">Register</a> if you don't have a
+				local account.
+			</p>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

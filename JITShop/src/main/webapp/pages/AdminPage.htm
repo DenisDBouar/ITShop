@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="Scripts/Admin.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+		<h1>Administration</h1>
+		<hr>
+
+			<h3>Add Product:</h3>
+			<table>
+				<tbody>
+					<tr>
+						<td><span id="MainContent_LabelAddCategory">Category:</span></td>
+						<td><select id="MainContent_DropDownAddCategory"
+							name="ctl00$MainContent$DropDownAddCategory">
+							
+						</select></td>
+					</tr>
+					<tr>
+						<td><span id="MainContent_LabelAddName">Name:</span></td>
+						<td><input type="text" id="MainContent_AddProductName"
+							name="ctl00$MainContent$AddProductName"> <span
+								data-val-controltovalidate="MainContent_AddProductName"
+								data-val-focusonerror="t" data-val-display="Dynamic"
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="display: none;"
+								id="MainContent_RequiredFieldValidator1">* Product name
+									required.</span></td>
+					</tr>
+					<tr>
+						<td><span id="MainContent_LabelAddDescription">Description:</span></td>
+						<td><input type="text" id="MainContent_AddProductDescription"
+							name="ctl00$MainContent$AddProductDescription"> <span
+								data-val-controltovalidate="MainContent_AddProductDescription"
+								data-val-focusonerror="t" data-val-display="Dynamic"
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="display: none;"
+								id="MainContent_RequiredFieldValidator2">* Description
+									required.</span></td>
+					</tr>
+					<tr>
+						<td><span id="MainContent_LabelAddPrice">Price:</span></td>
+						<td><input type="text" id="MainContent_AddProductPrice"
+							name="ctl00$MainContent$AddProductPrice"> <span
+								data-val-controltovalidate="MainContent_AddProductPrice"
+								data-val-focusonerror="t" data-val-display="Dynamic"
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="display: none;"
+								id="MainContent_RequiredFieldValidator3">* Price
+									required.</span> <span
+								data-val-validationexpression="^[0-9]*(\.)?[0-9]?[0-9]?$"
+								data-val-controltovalidate="MainContent_AddProductPrice"
+								data-val-focusonerror="t" data-val-display="Dynamic"
+								data-val="true"
+								data-val-evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+								style="display: none;"
+								id="MainContent_RegularExpressionValidator1">* Must be a
+									valid price without $.</span></td>
+					</tr>
+					<tr>
+						<td><span id="MainContent_LabelAddImageFile">Image
+								File:</span></td>
+						<td><input type="file" id="MainContent_ProductImage"
+							name="ctl00$MainContent$ProductImage"><span
+								data-val-controltovalidate="MainContent_ProductImage"
+								data-val-focusonerror="t" data-val-display="Dynamic"
+								data-val="true"
+								data-val-evaluationfunction="RequiredFieldValidatorEvaluateIsValid"
+								data-val-initialvalue="" style="display: none;"
+								id="MainContent_RequiredFieldValidator4">* Image path
+									required.</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<p></p>
+			<p></p>
+			<input type="submit" value="Add Product"
+				onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$AddProductButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+				id="MainContent_AddProductButton"
+				name="ctl00$MainContent$AddProductButton"> <span
+				id="MainContent_LabelAddStatus"></span>
+				<p></p>
+				<h3>Remove Product:</h3>
+				<table>
+					<tbody>
+						<tr>
+							<td><span id="MainContent_LabelRemoveProduct">Product:</span></td>
+							<td><select id="MainContent_DropDownRemoveProduct" name="ctl00$MainContent$DropDownRemoveProduct">
+							
+							</select></td>
+						</tr>
+					</tbody>
+				</table>
+				<p></p>
+				<input type="submit" value="Remove Product"
+				id="MainContent_RemoveProductButton"
+				name="ctl00$MainContent$RemoveProductButton"> <span
+					id="MainContent_LabelRemoveStatus"></span>
+
+</body>
+</html>

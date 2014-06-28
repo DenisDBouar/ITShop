@@ -1,10 +1,6 @@
 var rootURL = "http://localhost:8080/JITShop/rest/";
 
-$(document).ready(function(){
-	 $("#a_about").click(function(){
-		 
-	 });
-});
+
 
 function productdetails(id){
 	$.ajax({

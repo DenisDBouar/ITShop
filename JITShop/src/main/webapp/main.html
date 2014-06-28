@@ -5,6 +5,17 @@
 	<script src="Scripts/jquery-min.js"></script>
 	<script src="Scripts/mainpage.js"></script>
 	<script src="Scripts/product.js"></script>
+	<script src="Scripts/loginregister.js"></script>
+	<script src="Scripts/Cart.js"></script>
+	<script src="Scripts/Admin.js"></script>
+	
+<script type="text/javascript" src="Scripts/cript/jsbn.js"></script>  
+<script type="text/javascript" src="Scripts/cript/jsbn2.js"></script>  
+<script type="text/javascript" src="Scripts/cript/prng4.js"></script>  
+<script type="text/javascript" src="Scripts/cript/rng.js"></script>  
+<script type="text/javascript" src="Scripts/cript/rsa.js"></script>  
+<script type="text/javascript" src="Scripts/cript/rsa2.js"></script>  
+<script type="text/javascript" src="Scripts/cript/base64.js"></script>  
 	
 	<script type="text/javascript" src="Scripts/productlist.js" ></script>
 	
@@ -38,19 +49,18 @@
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
 	                    </button>
-	                    <a href="./main.jsp" class="navbar-brand">ITShop</a>
+	                    <a href="./main.html" class="navbar-brand">ITShop</a>
 	                </div>
 	                <div class="navbar-collapse collapse">
 	                    <ul class="nav navbar-nav">
-	                        <li></li>
-	                        <!-- <li><a href="About">About</a></li> -->
+	                        <li><a href="#" id="adminLink">Admin</a></li>
 	                        <li><a id="a_about" href="#">About</a></li>
-	                        <li><a id="a_Contact" href="#">Contact</a></li>                           
+	                        <li><a id="a_Contact" href="#">Contact</a></li>
 	                    </ul>
 	                    
 	                            <ul class="nav navbar-nav navbar-right">
-	                                <li><a href="Account/Register">Register</a></li>
-	                                <li><a href="Account/Login">Log in</a></li>
+	                                <li><a id="a_register" href="#">Register</a></li>
+	                                <li><a id="a_login" href="#">Log in</a></li>
 	                            </ul>
 	                        
 	                </div>
@@ -67,8 +77,8 @@
 			    <div class="layout-spanright">
 				    <div class="toolbar rc">
 					    <div class="search-panel">
-						    <a href="tel:4151234567" class="main-phone">1&nbsp;(415)&nbsp;123-45-67,</a>
-						    <a href="tel:4087654321" class="main-phone">1&nbsp;(408)&nbsp;765-43-21</a>
+						    <a href="#" class="main-phone">1&nbsp;(415)&nbsp;123-45-67,</a>
+						    <a href="#" class="main-phone">1&nbsp;(408)&nbsp;765-43-21</a>
 						    <span onclick="return(FeedbackForm())" class="head-feedback">Feedback</span>				    
 						    <input name="ctl00$ss" id="ss" type="search" onkeyup="PreSearch(this.value)" autocomplete="off" placeholder="Search" name="s" class="search-field rc" />                   
 		                    <input type="submit" name="ctl00$Search" value="Search" id="Search" class="search-button rc" />
@@ -77,7 +87,7 @@
 					    </div>	
 					    <div class="user-panel">
 						    <div class="guest-links">										
-		                        <a href="ShoppingCart" id="cartCount" class="main-phone">Wish List (0)</a>                          
+		                        <a href="javascript:void(0);" id="cartCount" class="main-phone" onclick="goToChart()">Wish List</a>
 						    </div>
 					    </div>
 				    </div>
